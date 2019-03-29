@@ -4,7 +4,11 @@
 
 {% block content %}
       <div class="jumbotron">
-        <h1>Wellcome to LoginOnFlask page !!!</h1>
+        {% if user %}
+          <h1>Wellcome to LoginOnFlask page, {{ user }} !!!</h1>
+        {% else %}
+          <h1>Wellcome to LoginOnFlask page !!!</h1>
+        {% endif %}
         <p class="lead">This is a simple example of how to validate and login usin the flask framework.</p>
       </div>
 {% endblock %}
