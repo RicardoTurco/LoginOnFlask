@@ -1,5 +1,5 @@
 from flask import render_template, redirect, url_for, flash
-from flask_login import login_user, logout_user
+from flask_login import login_user, logout_user, current_user
 from app import app, db, lm
 
 
@@ -12,9 +12,10 @@ def load_user(id):
     return User.query.filter_by(id=id).first()
 
 
-@app.route("/index/<user>")
-@app.route("/", defaults={"user": None})
+@app.route("/", defaults={"user": None}, methods=["GET","POST"])
 def index(user):
+    if current_user.is_authenticated:
+        user = current_user.username
     return render_template('index.html', user=user)
 
 

@@ -21,9 +21,6 @@ http://localhost:5000
 /<br>
 (displays the simple message)<br><br>
 
-/index/USER<br>
-(displays custom message with USER)<br><br>
-
 /login<br>
 (display the LOGIN page)<br><br>
 
