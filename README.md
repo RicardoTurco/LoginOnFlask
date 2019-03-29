@@ -8,7 +8,8 @@ Here is demonstrated how to validate and login-in using the flask framework
 Create and activate VENV
 
 pip install -r requirements.txt<br>
-(remove the comment from the "INSERT" method on route "Base URL/crud", to add a "user")
+(remove the comment from the "INSERT" method on route "Base URL/crud", to add more "users",
+there are currently two users: "turco" e "teste"; both with the password "1234") 
 
 python run.py runserver<br>
 (Make sure you have added a User)
