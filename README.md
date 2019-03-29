@@ -1,7 +1,7 @@
 # LoginOnFlask
 Login using Flask
 
-Here is demonstrated how to validate and login in using the flask
+Here is demonstrated how to validate and login-in using the flask framework
 
 ## Road Map:
 
