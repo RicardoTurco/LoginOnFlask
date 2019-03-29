@@ -9,7 +9,7 @@ Create and activate VENV
 
 pip install -r requirements.txt<br>
 (remove the comment from the "INSERT" method on route "Base URL/crud", to add more "users",
-there are currently two users: "turco" e "teste"; both with the password "1234") 
+there are currently two users: "turco" and "teste"; both with the password "1234") 
 
 python run.py runserver<br>
 (Make sure you have added a User)
