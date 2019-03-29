@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Toilter</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename="css/bootstrap.min.css") }}">
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <h1>Toilter</h1>
-    {% if user %}
-        <p>Wellcome to Toilter, <b>{{ user }}</b> ...</p>
-    {% else %}
-        <p>Wellcome to Toilter ...</p>
-    {% endif %}
+{% block title %}{{ super() }} - Index{% endblock %}
 
-    <script src="{{ url_for('static', filename="js/bootstrap.min.js") }}"></script>
-</body>
-</html>
+{% block content %}
+      <div class="jumbotron">
+        <h1>Wellcome to LoginOnFlask page !!!</h1>
+        <p class="lead">This is a simple example of how to validate and login usin the flask framework.</p>
+      </div>
+{% endblock %}
