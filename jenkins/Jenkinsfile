@@ -1,0 +1,62 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Configuração do Ambiente') {
+            steps {
+                // Configurar o ambiente virtual do Python (opcional)
+                echo 'Conf ambiente ...'
+                sh 'python -m venv venv'
+                sh 'source venv/bin/activate'
+                sh 'python -m pip install --upgrade pip'
+                sh 'pip install -U setuptools'
+                sh 'pip install wheel'
+                sh 'pip install -r requirements.txt'
+            }
+        }
+
+        stage('Testes') {
+            steps {
+                // Executar testes (substitua pelo seu comando de teste)
+                echo 'Testes ...'
+            }
+        }
+
+        stage('Construção') {
+            steps {
+                // Realizar qualquer ação adicional de construção (por exemplo, compilar assets)
+                // Substitua pelo seu comando de construção
+                echo 'Construcao ...'
+            }
+        }
+
+        stage('Implantação') {
+            steps {
+                // Implementar o projeto (substitua pelo seu processo de implantação)
+                // Exemplo: implantar no servidor de produção
+                echo 'Implantacao ....'
+            }
+        }
+    }
+
+    post {
+        always {
+            // Sempre limpar o ambiente após a execução
+            sh 'deactivate' // Desativar o ambiente virtual Python
+        }
+        success {
+            // Executar ações adicionais após uma construção bem-sucedida
+            echo 'Build bem-sucedido!'
+
+            // Notificar ou fazer algo mais, se necessário
+        }
+        failure {
+            // Executar ações adicionais em caso de falha na construção
+            echo 'Build falhou!'
+
+            // Notificar ou fazer algo mais, se necessário
+        }
+    }
+}
+
